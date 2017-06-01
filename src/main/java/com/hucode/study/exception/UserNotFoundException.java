@@ -1,4 +1,4 @@
-package com.hucode.study;
+package com.hucode.study.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
