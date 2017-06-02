@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <package name="com.hucode.study.domain"/>
+        <package name="com.hucode.study.model"/>
     </typeAliases>
     <mappers>
         <mapper resource="mappers/UserMapper.xml"/>

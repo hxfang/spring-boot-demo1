@@ -1,6 +1,6 @@
 package com.hucode.study;
 
-import com.hucode.study.domain.User;
+import com.hucode.study.model.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
