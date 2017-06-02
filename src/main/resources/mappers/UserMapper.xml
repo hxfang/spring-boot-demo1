@@ -8,6 +8,7 @@
         <result column="phone" property="phone" jdbcType="VARCHAR" />
         <result column="email" property="email" jdbcType="VARCHAR" />
     </resultMap>
+    <cache type="com.hucode.study.util.RedisCache"/>
     <sql id="Base_Column_List" >
         id, name, password, phone, email
     </sql>
