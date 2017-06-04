@@ -1,10 +1,4 @@
 spring:
-  # 数据库配置
-  datasource:
-    url: jdbc:mysql://192.168.11.98:3306/megaeyes_nms_v2?useUnicode=true&characterEncoding=gbk
-    username: megaeyes_nms_v2
-    password: megaeyes_nms_v2
-    driver-class-name: org.gjt.mm.mysql.Driver
   redis:
     # redis数据库索引（默认为0），我们使用索引为3的数据库，避免和其他数据库冲突
     database: 3
@@ -26,21 +20,19 @@ spring:
       min-idle: 0
       # 从连接池中获取连接最大等待时间（默认为-1，单位为毫秒，负数表示无限）
       max-wait: -1
-
 # 服务器配置
 server:
   port: 8787
-
 # mybatis配置
 mybatis:
-  config-location: classpath:mybatis-config.xml
-
+  config-location: classpath:config/mybatis-config.xml
+# 分页工具配置
 pagehelper:
   helperDialect: mysql
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql
-
+# 日志配置
 logging:
   level:
     com.hucode.study: DEBUG
@@ -56,3 +48,24 @@ spring:
     driver-class-name: org.h2.Driver
     schema: classpath:schema.sql
     data: classpath:data.sql
+
+---
+spring:
+  profiles: home
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/spring_boot_test
+    username: root
+    password: WhoseMySQL
+    driver-class-name: org.gjt.mm.mysql.Driver
+# 服务器配置
+
+---
+spring:
+  profiles: hxht
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://192.168.11.98:3306/megaeyes_nms_v2?useUnicode=true&characterEncoding=gbk
+    username: megaeyes_nms_v2
+    password: megaeyes_nms_v2
+    driver-class-name: org.gjt.mm.mysql.Driver
