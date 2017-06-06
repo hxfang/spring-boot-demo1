@@ -14,7 +14,7 @@ import static org.assertj.core.api.Java6Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles(profiles = "test")
-public class SmrDemoApplicationTests {
+public class ApplicationTests {
 
 	@LocalServerPort
 	private int port;
