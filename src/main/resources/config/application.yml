@@ -36,10 +36,8 @@ pagehelper:
 # 日志配置
 logging:
   level:
+    root: INFO
     com.hucode.study: DEBUG
-    org.springframework: INFO
-# rabbitmq配置
-
 
 ---
 spring:
@@ -62,13 +60,12 @@ spring:
     username: root
     password: WhoseMySQL
     driver-class-name: org.gjt.mm.mysql.Driver
+  # rabbitmq配置
   rabbitmq:
     host: 127.0.0.1
     port: 5672
     username: guest
     password: guest
-
-# 服务器配置
 
 ---
 spring:

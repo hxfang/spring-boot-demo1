@@ -6,6 +6,7 @@ import com.hucode.study.mapper.UserMapper;
 import com.hucode.study.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -35,11 +36,15 @@ public class UserService {
         userMapper.deleteByPrimaryKey(id);
     }
 
+    @Transactional(noRollbackFor={IllegalArgumentException.class})
     public void save(User user) {
-        if (user.getId() != null) {
+        if (user.getId() != null && user.getId() != 0) {
             userMapper.updateByPrimaryKey(user);
         } else {
             userMapper.insert(user);
+        }
+        if(user.getPassword().length() < 6){
+            throw new IllegalArgumentException("User'password is not short!");
         }
     }
 }

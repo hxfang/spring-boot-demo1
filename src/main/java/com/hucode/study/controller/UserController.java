@@ -44,7 +44,7 @@ public class UserController {
 
     @ApiOperation(value="更新用户", notes="更新对应的User对象")
     @PutMapping("/{id}")
-    public User updateUserInfo(
+    public String updateUserInfo(
             @PathVariable("id")
                     Integer userId,
             @RequestBody
@@ -53,9 +53,18 @@ public class UserController {
         if (user == null) {
             throw new UserNotFoundException(userId);
         }
-        user.setPhone(newUser.getPhone());
-        user.setEmail(newUser.getEmail());
+        user.setName(newUser.getName());
+        user.setPassword(newUser.getPassword());
         userService.save(user);
-        return user;
+        return "success";
+    }
+
+    @ApiOperation(value="增加用户", notes="增加User对象")
+    @PutMapping("/")
+    public String addUserInfo(
+            @RequestBody
+                    User newUser) {
+        userService.save(newUser);
+        return "success";
     }
 }
