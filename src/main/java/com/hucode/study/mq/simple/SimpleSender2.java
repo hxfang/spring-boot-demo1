@@ -2,6 +2,7 @@ package com.hucode.study.mq.simple;
 
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -11,6 +12,7 @@ import java.util.Date;
  */
 
 @Component
+@Profile("home")
 public class SimpleSender2 {
 
     @Autowired

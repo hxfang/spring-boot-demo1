@@ -3,11 +3,13 @@ package com.hucode.study.config;
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
 
 /**
  * Created by Fang on 17/6/5.
  */
 @Configuration
+@Profile("home")
 public class RabbitConfig {
 
     final static String queueTest = "test";
