@@ -95,6 +95,13 @@
 			<artifactId>spring-boot-starter-amqp</artifactId>
 		</dependency>
 
+		<!-- druid -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.29</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
